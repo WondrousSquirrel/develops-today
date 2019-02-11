@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["plugin:import/recommended", "plugin:react/recommended"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "exprerimentalObjectRestSpread": true
+    }
+  },
+  "rules": {}
+}
