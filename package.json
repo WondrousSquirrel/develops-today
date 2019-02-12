@@ -1,10 +1,11 @@
 {
   "name": "react-refactoring",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "private": true,
   "scripts": {
-    "client": "webpack-dev-server --config ./webpack.dev.js"
+    "client": "webpack-dev-server --config ./webpack.dev.js",
+    "build": "webpack --config ./webpack.prod.js"
   },
   "keywords": [
     "react-redux"

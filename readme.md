@@ -15,3 +15,7 @@ git clone this repo and inside folder execute `npm install` to install all depen
 To run dev server:
 
 `npm run client`
+
+for production use:
+
+`npm run build`
