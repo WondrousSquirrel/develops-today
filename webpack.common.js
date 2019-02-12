@@ -35,8 +35,39 @@ module.exports = {
         test: /\.(jsx|js)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
-      }
+      },
       // more rules goes here
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../"
+            }
+          },
+          "css-loader"
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              disable: true,
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              optipng: {
+                enabled: false
+              }
+            }
+          }
+        ]
+      }
     ]
   }
 };

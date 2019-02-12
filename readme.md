@@ -1,4 +1,5 @@
 <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"></p>
+
 # React-Redux-Template
 
 ## About
@@ -13,9 +14,9 @@ git clone this repo and inside folder execute `npm install` to install all depen
 
 To run dev server:
 
-'''npm run client'''
+`npm run client`
 
 ## Authors
 
-**[Alexander Antoschuk]**(https://github.com/WondrousSquirrel)
-**[Alexander Novikov]**(https://github.com/N0v3x)
+_[Alexander Antoschuk](https://github.com/WondrousSquirrel)_
+_[Alexander Novikov](https://github.com/N0v3x)_
