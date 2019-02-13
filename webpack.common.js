@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
@@ -25,7 +26,15 @@ module.exports = {
       chunkFilename: "[name].bundle.css"
     })
   ],
-
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        exclude: /\/node_modules/,
+        parallel: true,
+        extractComments: "all"
+      })
+    ]
+  },
   resolve: {
     extensions: ["*", ".js", ".jsx"]
   },
