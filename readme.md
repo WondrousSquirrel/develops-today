@@ -19,3 +19,13 @@ To run dev server:
 for production use:
 
 `npm run build`
+
+## Note
+
+If u have jest version 21 or lower u need to add file `shim.js` inside test folder and put this functions inside file
+
+```
+global.requestAnitaionFrame = callback => {
+  setTimeout(callback, 0);
+}
+```
