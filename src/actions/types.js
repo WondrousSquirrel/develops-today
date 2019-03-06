@@ -1,3 +1,1 @@
-/** Action types
- * - const ACTION_TYPE = "ACTION_TYPE"
- *  */
+export const RETRIEVE_POSTS = "RETRIEVE_POSTS";

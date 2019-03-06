@@ -5,7 +5,7 @@ import App from "./Component/App";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.scss";
 
 import store from "./store";
 

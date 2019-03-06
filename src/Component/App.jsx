@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+import Navbar from "./Navbar";
+
 const App = () => {
   return (
     <>
-      <h1>React Dev Server</h1>
+      <Navbar />
     </>
   );
 };

@@ -47,7 +47,7 @@ module.exports = {
       },
       // more rules goes here
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -55,7 +55,8 @@ module.exports = {
               publicPath: "../"
             }
           },
-          "css-loader"
+          "css-loader",
+          "sass-loader"
         ]
       },
       {
