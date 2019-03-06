@@ -1,8 +1,11 @@
-import { RETRIEVE_POSTS } from "../actions/types";
+import { RETRIEVE_POSTS, RETRIEVE_POST } from "../actions/types";
 
 const initialState = {
   posts: [],
-  post: []
+  singlePost: {
+    post: [],
+    comments: []
+  }
 };
 
 export default function(state = initialState, { type, payload }) {
@@ -12,6 +15,12 @@ export default function(state = initialState, { type, payload }) {
         ...state,
         posts: payload,
         ...state.posts
+      };
+    }
+    case RETRIEVE_POST: {
+      return {
+        ...state,
+        singlePost: payload
       };
     }
     default:

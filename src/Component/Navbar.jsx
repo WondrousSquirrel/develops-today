@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 
 import PostList from "../Containers/PostList";
 import CreatePost from "../Containers/CreatePost";
+import Post from "../Containers/Post";
 
 const Navbar = () => {
   return (
@@ -11,6 +12,7 @@ const Navbar = () => {
       <Link to="create">Create Post</Link>
       <Route exact path="/" component={PostList} />
       <Route path="/create" component={CreatePost} />
+      <Route path="/detail/:id" component={Post} />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -17,6 +18,9 @@ const PostList = props => {
           <div key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
+            <button>
+              <Link to={`/detail/${post.id}`}>Detail</Link>
+            </button>
           </div>
         );
       })}

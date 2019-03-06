@@ -1,1 +1,2 @@
 export const RETRIEVE_POSTS = "RETRIEVE_POSTS";
+export const RETRIEVE_POST = "RETRIEVE_POST";

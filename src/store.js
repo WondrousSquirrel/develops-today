@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import { getAllPost } from "./actions/postActions";
+import { getPost } from "./actions/postActions";
 
 import rootReducer from "./reducers/index";
 
