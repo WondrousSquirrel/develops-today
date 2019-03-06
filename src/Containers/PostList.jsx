@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { getAllPost } from "../actions/postActions";
+import { getAllPost, deletePost } from "../actions/postActions";
 
 const PostList = props => {
   useEffect(() => {
     props.getAllPost();
   }, []);
+
+  const handleDelete = id => {
+    props.deletePost(id);
+    props.getAllPost();
+  };
 
   return (
     <>
@@ -21,6 +26,7 @@ const PostList = props => {
             <button>
               <Link to={`/detail/${post.id}`}>Detail</Link>
             </button>
+            <button onClick={() => handleDelete(post.id)}>Delete</button>
           </div>
         );
       })}
@@ -39,5 +45,5 @@ PostList.propTypes = {
 
 export default connect(
   mapStateToProps,
-  { getAllPost }
+  { getAllPost, deletePost }
 )(PostList);

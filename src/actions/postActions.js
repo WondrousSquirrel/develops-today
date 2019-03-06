@@ -2,6 +2,7 @@ import {
   RETRIEVE_POSTS,
   RETRIEVE_POST,
   CREATE_POST,
+  DELETE_POST,
   ADD_COMMENT
 } from "./types";
 import Axios from "axios";
@@ -18,6 +19,11 @@ const retrievePost = post => ({
 
 const _createPost = () => ({
   type: CREATE_POST
+});
+
+const _deletePost = id => ({
+  type: DELETE_POST,
+  payload: id
 });
 
 const _addComment = comment => ({
@@ -42,6 +48,12 @@ export const getPost = id => dispatch => {
 export const createPost = post => dispatch => {
   Axios.post("https://simple-blog-api.crew.red/posts", post)
     .then(() => dispatch(_createPost()))
+    .catch(err => console.error(err.message));
+};
+
+export const deletePost = id => dispatch => {
+  Axios.delete(`https://simple-blog-api.crew.red/posts/${id}`)
+    .then(() => dispatch(_deletePost(id)))
     .catch(err => console.error(err.message));
 };
 

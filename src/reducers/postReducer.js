@@ -1,7 +1,7 @@
 import {
   RETRIEVE_POSTS,
   RETRIEVE_POST,
-  CREATE_POST,
+  DELETE_POST,
   ADD_COMMENT
 } from "../actions/types";
 
@@ -25,6 +25,12 @@ export default function(state = initialState, { type, payload }) {
       return {
         ...state,
         singlePost: payload
+      };
+    }
+    case DELETE_POST: {
+      return {
+        ...state,
+        posts: state.posts.filter(post => post.id !== payload)
       };
     }
     case ADD_COMMENT: {
