@@ -8,8 +8,10 @@ import Post from "../Containers/Post";
 const Navbar = () => {
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="create">Create Post</Link>
+      <div className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="create">Create Post</Link>
+      </div>
       <Route exact path="/" component={PostList} />
       <Route path="/create" component={CreatePost} />
       <Route path="/detail/:id" component={Post} />

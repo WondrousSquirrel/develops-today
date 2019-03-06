@@ -17,16 +17,21 @@ const PostList = props => {
 
   return (
     <>
-      <h1>Post List</h1>
       {props.posts.map(post => {
         return (
-          <div key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <button>
-              <Link to={`/detail/${post.id}`}>Detail</Link>
-            </button>
-            <button onClick={() => handleDelete(post.id)}>Delete</button>
+          <div className="post" key={post.id}>
+            <div>
+              <h2>{post.title}</h2>
+              <div className="body">
+                <p>{post.body}</p>
+              </div>
+              <div className="footer">
+                <button>
+                  <Link to={`/detail/${post.id}`}>Detail</Link>
+                </button>
+                <button onClick={() => handleDelete(post.id)}>Delete</button>
+              </div>
+            </div>
           </div>
         );
       })}
@@ -40,7 +45,8 @@ const mapStateToProps = state => ({
 
 PostList.propTypes = {
   posts: PropTypes.array,
-  getAllPost: PropTypes.func
+  getAllPost: PropTypes.func,
+  deletePost: PropTypes.func
 };
 
 export default connect(

@@ -16,7 +16,8 @@ const CreatePost = props => {
     }));
   };
 
-  const handleClick = () => {
+  const handleClick = e => {
+    e.preventDefault();
     const post = {
       id: uid(),
       title: state.title,
@@ -27,19 +28,23 @@ const CreatePost = props => {
   };
 
   return (
-    <>
+    <div className="create-post">
       <h1>Create Post</h1>
-      <hr />
-      <label>
-        Title:
-        <input type="text" name="title" onChange={e => handleChange(e)} />
-      </label>
-      <label>
-        Body:
-        <input type="text" name="body" onChange={e => handleChange(e)} />
-      </label>
-      <button onClick={handleClick}>Create Post</button>
-    </>
+
+      <form onSubmit={handleClick}>
+        <label>
+          Title:
+          <input type="text" name="title" onChange={e => handleChange(e)} />
+        </label>
+        <label>
+          Body:
+          <input type="text" name="body" onChange={e => handleChange(e)} />
+        </label>
+        <div className="add-btn">
+          <button type="submit">Create Post</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

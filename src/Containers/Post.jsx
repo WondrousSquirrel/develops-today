@@ -24,16 +24,18 @@ const Post = props => {
   };
 
   return (
-    <>
+    <div className="post">
       <h2>{props.post.title}</h2>
-      <p>{props.post.body}</p>
+      <div className="body">
+        <p>{props.post.body}</p>
+      </div>
       <hr />
       {props.post.comments.map(comment => {
         return <p key={comment.id}>{comment.body}</p>;
       })}
       <input onChange={e => setComment(e.target.value)} />
       <button onClick={createComment}>Add comment</button>
-    </>
+    </div>
   );
 };
 
