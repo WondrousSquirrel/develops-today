@@ -1,4 +1,9 @@
-import { RETRIEVE_POSTS, RETRIEVE_POST, ADD_COMMENT } from "../actions/types";
+import {
+  RETRIEVE_POSTS,
+  RETRIEVE_POST,
+  CREATE_POST,
+  ADD_COMMENT
+} from "../actions/types";
 
 const initialState = {
   posts: [],
