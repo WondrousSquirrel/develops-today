@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -16,7 +15,7 @@ const Post = props => {
       <p>{props.post.body}</p>
       <hr />
       {props.post.comments.map(comment => {
-        return <p key={comment.postId}>{comment.body}</p>;
+        return <p key={comment.id}>{comment.body}</p>;
       })}
     </>
   );
@@ -25,6 +24,12 @@ const Post = props => {
 const mapStateToProps = state => ({
   post: state.postReducer.singlePost
 });
+
+Post.propTypes = {
+  post: PropTypes.object,
+  match: PropTypes.object,
+  getPost: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,
